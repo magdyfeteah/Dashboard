@@ -1,0 +1,66 @@
+@import "../../Styles/variables.scss";
+@import "../../Styles/responsive.scss";
+.notificationsList {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  background-color: $main-bg;
+  margin: 10px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(38, 38, 38, 0.78);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 999;
+  @include md {
+    width: 250px;
+    right: -50px;
+  }
+  @include sm {
+    width: 250px;
+    right: -100px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  hr {
+    border: 0.5px solid rgba(23, 26, 25, 0.462);
+    margin-bottom: 20px;
+  }
+  .lists {
+    display: flex;
+    flex-direction: column;
+
+    .list {
+      margin-bottom: 10px;
+
+      position: relative;
+      &:not(:last-child) {
+        border-bottom: 0.5px solid #85858529;
+      }
+      .message {
+        width: 75%;
+        margin-bottom: 6px;
+      }
+
+      .time {
+        font-size: 12px;
+        margin-bottom: 8px;
+        color: #ababab73;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 35%;
+        right: 0;
+        background-color: rgb(15, 156, 119);
+        border-radius: 50%;
+      }
+      &:first-child::after {
+        background-color: rgba(15, 156, 118, 0.093);
+      }
+    }
+  }
+}
